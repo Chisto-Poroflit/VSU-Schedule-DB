@@ -12,10 +12,18 @@ namespace SichCreateDB
         {
             Database.EnsureCreated();
         }
+        public ApplicationContext(DbContextOptions<ApplicationContext> options)
+            : base(options)
+        {
+            Database.EnsureCreated();
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=DimasGotovsya;Trusted_Connection=True;");
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=DimasGotovsya;Trusted_Connection=True;");
+            }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
