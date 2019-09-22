@@ -8,13 +8,15 @@ namespace SichCreateDB.Models.Entity
     {
         public int Id { get; set; }
 
-        public int CourseId { get; set; }
-        public Course Course { get; set; }
+        public int SemesterNumber { get; set; }
 
-        public string SpecializatioName { get; set; }
+        public int GroupNumber { get; set; }
+
+        public int SubgroupNumber { get; set; }
+
+        public int SpecializatioId { get; set; }
         public Specialization Specialization { get; set; }
 
         public List<CoupleGroup> CoupleGroups { get; set; }
-        public List<GroupTime> GroupTimes { get; set; }
     }
 }

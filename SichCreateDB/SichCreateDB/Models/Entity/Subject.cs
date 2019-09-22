@@ -8,10 +8,9 @@ namespace SichCreateDB.Models.Entity
 
         public string Name { get; set; }
 
-        public Couple Couple { get; set; }
+        public int Semester { get; set; }
 
-        public List<TeacherSubject> TeacherSubjects { get; set; }
-        public List<SubjectType> SubjectTypes { get; set; }
-        public List<SubjectCourseSpecialization> SubjectCourseSpecializations { get; set; }
+        public Couple Couple { get; set; }
+        public CurriculumUnit CurriculumUnit { get; set; }
     }
 }

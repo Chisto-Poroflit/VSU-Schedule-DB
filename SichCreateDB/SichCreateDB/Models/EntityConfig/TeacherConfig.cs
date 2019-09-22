@@ -12,6 +12,7 @@ namespace SichCreateDB.Models.EntityConfig
             builder.Property(t => t.Id)
                 .ValueGeneratedOnAdd();
             builder.Property(t => t.FullName).HasMaxLength(300);
+            builder.Property(t => t.Position).HasMaxLength(500);
         }
     }
 }

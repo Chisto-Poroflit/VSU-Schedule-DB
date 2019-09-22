@@ -8,10 +8,16 @@ namespace SichCreateDB.Models.Entity
     {
         public string Number { get; set; }
 
+        public int Capacity { get; set; }
+
+        public bool IsLecture { get; set; }
+
+        public bool IsPractice { get; set; }
+
+        public bool IsLaboratory { get; set; }
+
+        public bool IsSpecial { get; set; }
+
         public Couple Couple { get; set; }
-
-        public List<RoomType> TypeRoom { get; set; }
-
-        public List<RoomTime> RoomTimes { get; set; }
     }
 }

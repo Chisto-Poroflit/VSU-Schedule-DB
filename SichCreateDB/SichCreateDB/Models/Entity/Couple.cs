@@ -14,11 +14,19 @@ namespace SichCreateDB.Models.Entity
         public int TeacherId { get; set; }
         public Teacher Teacher { get; set; }
 
-        public int DayTimeId { get; set; }
-        public DayTime DayTime { get; set; }
-
         public int SubjectId { get; set; }
         public Subject Subject { get; set; }
+
+        public int ParaId { get; set; }
+        public Para Para { get; set; }
+
+        public int Day { get; set; }
+
+        public bool Numerator { get; set; }
+
+        public bool Denomirator { get; set; }
+
+        public int LessonType { get; set; }
 
         public List<CoupleGroup> CoupleGroups { get; set; }
     }

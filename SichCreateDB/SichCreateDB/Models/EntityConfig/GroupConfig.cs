@@ -11,12 +11,12 @@ namespace SichCreateDB.Models.EntityConfig
             builder.HasKey(g => g.Id);
             builder.Property(g => g.Id)
                 .ValueGeneratedOnAdd();
-            builder.HasOne(g => g.Course)
-                .WithOne(c => c.Group)
-                .HasForeignKey<Group>(g => g.CourseId);
+            builder.Property(g => g.SemesterNumber).IsRequired();
+            builder.Property(g => g.SubgroupNumber).IsRequired();
+            builder.Property(g => g.GroupNumber).IsRequired();
             builder.HasOne(g => g.Specialization)
                 .WithOne(s => s.Group)
-                .HasForeignKey<Group>(g => g.SpecializatioName);
+                .HasForeignKey<Group>(g => g.SpecializatioId);
         }
     }
 }
