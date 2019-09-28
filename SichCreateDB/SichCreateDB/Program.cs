@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DbLibrary;
+using System;
 
 namespace SichCreateDB
 {
@@ -6,7 +7,7 @@ namespace SichCreateDB
     {
         static void Main(string[] args)
         {
-            using (ApplicationContext db = new ApplicationContext())
+            using (var db = new ApplicationContext())
             {
                 Console.WriteLine("Hello World!");
             }
