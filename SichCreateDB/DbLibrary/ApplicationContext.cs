@@ -10,7 +10,11 @@ namespace DbLibrary
         {
             Database.EnsureCreated();
         }
-
+        public ApplicationContext(DbContextOptions<ApplicationContext> options)
+            : base(options)
+        {
+            Database.EnsureCreated();
+        }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Subject> Subjects { get; set; }
@@ -22,7 +26,8 @@ namespace DbLibrary
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=DimasGotovsya;Trusted_Connection=True;");
+            if(!optionsBuilder.IsConfigured)
+                optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=DimasGotovsya;Trusted_Connection=True;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
