@@ -23,17 +23,17 @@ namespace DbLibrary.Models.EntityConfig
                 .IsRequired();
               //  .HasComputedColumnSql("CHECK((Numerator = 0 AND Denomirator = 1) OR (Numerator = 1 AND Denomirator = 0) OR (Numerator = 1 AND Denomirator = 1))");
             builder.HasOne(c => c.Para)
-                .WithOne(dt => dt.Couple)
-                .HasForeignKey<Couple>(c => c.ParaId);
+                .WithMany(dt => dt.Couples)
+                .HasForeignKey(c => c.ParaId);
             builder.HasOne(c => c.Room)
-                .WithOne(r => r.Couple)
-                .HasForeignKey<Couple>(c => c.RoomId);
+                .WithMany(r => r.Couples)
+                .HasForeignKey(c => c.RoomId);
             builder.HasOne(c => c.Subject)
-                .WithOne(s => s.Couple)
-                .HasForeignKey<Couple>(c => c.SubjectId);
+                .WithMany(s => s.Couples)
+                .HasForeignKey(c => c.SubjectId);
             builder.HasOne(c => c.Teacher)
-                .WithOne(t => t.Couple)
-                .HasForeignKey<Couple>(c => c.TeacherId);
+                .WithMany(t => t.Couples)
+                .HasForeignKey(c => c.TeacherId);
         }
     }
 }

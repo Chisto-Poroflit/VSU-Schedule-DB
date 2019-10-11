@@ -1,4 +1,6 @@
 ﻿
+using System.Collections.Generic;
+
 namespace DbLibrary.Models.Entity
 {
     public class Teacher
@@ -9,6 +11,6 @@ namespace DbLibrary.Models.Entity
 
         public string Position { get; set; }
 
-        public Couple Couple { get; set; }
+        public List<Couple> Couples { get; set; }
     }
 }

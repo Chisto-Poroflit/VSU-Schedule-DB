@@ -1,4 +1,5 @@
 ﻿
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace DbLibrary.Models.Entity
@@ -24,6 +25,6 @@ namespace DbLibrary.Models.Entity
         [Display(Name = "Специальная")]
         public bool IsSpecial { get; set; }
 
-        public Couple Couple { get; set; }
+        public List<Couple> Couples { get; set; }
     }
 }

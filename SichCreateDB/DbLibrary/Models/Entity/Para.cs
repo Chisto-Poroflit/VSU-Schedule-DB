@@ -10,6 +10,6 @@ namespace DbLibrary.Models.Entity
 
         public string EndTime { get; set; }
 
-        public Couple Couple { get; set; }
+        public List<Couple> Couples { get; set; }
     }
 }

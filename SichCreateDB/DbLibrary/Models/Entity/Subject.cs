@@ -1,4 +1,6 @@
 ﻿
+using System.Collections.Generic;
+
 namespace DbLibrary.Models.Entity
 {
     public class Subject
@@ -9,7 +11,7 @@ namespace DbLibrary.Models.Entity
 
         public int Semester { get; set; }
 
-        public Couple Couple { get; set; }
+        public List<Couple> Couples { get; set; }
         public CurriculumUnit CurriculumUnit { get; set; }
     }
 }
