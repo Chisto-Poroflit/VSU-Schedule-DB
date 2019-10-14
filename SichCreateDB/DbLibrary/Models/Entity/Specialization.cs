@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace DbLibrary.Models.Entity
 {
@@ -6,6 +7,7 @@ namespace DbLibrary.Models.Entity
     {
         public int Id { get; set; }
 
+        [Display(Name = "Специальность")]
         public string Name { get; set; }
 
       //  public int ParentSpecId { get; set; }
